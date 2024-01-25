@@ -41,3 +41,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+document.addEventListener('scroll', function () {
+  // Get the distance scrolled from the top of the page
+  var scrollDistance = window.scrollY;
+  scrollDistance-= 800;
+
+  
+  // Set the minimum value for top to ensure the element doesn't go above the container
+  var minTop = 40;
+  
+  // Limit the movement within the container height
+  var containerHeight = document.getElementById('caixa').offsetHeight;
+  var maxTop = containerHeight - document.getElementById('movingElement').offsetHeight;
+
+  // Move the element down based on the scroll distance, but limit within the container
+  var movingElement = document.getElementById('movingElement');
+  var num = Math.min(Math.max(scrollDistance, minTop), maxTop);
+  movingElement.style.top = num + 'px';
+});
