@@ -1,46 +1,36 @@
 window.onscroll = function () { myFunction() };
 
 var header = document.getElementById("aheader");
+var pagina = document.getElementById("pagina");
 var sticky = header.offsetTop;
 
 function myFunction() {
   if (window.scrollY > sticky) {
     header.classList.add("fixed");
+    pagina.classList.add("fixed");
   } else {
     header.classList.remove("fixed");
+    pagina.classList.remove("fixed");
   }
 }
  
+// Add this script at the end of the body or in the head
+document.querySelectorAll('.scrollLink').forEach(function(link) {
+  link.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevents the default behavior of the link
 
-document.addEventListener('DOMContentLoaded', function () {
-  const buttons = document.querySelectorAll('button');
-  const textContents = [
-    "1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget gravida cum.",
-    "2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget gravida cum.",
-    "3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae justo eget magna fermentum. Imperdiet nulla malesuada pellentesque elit eget gravida cum.",
-  ];
+    // Get the target scroll position from the 'data-scroll' attribute
+    var targetScroll = parseInt(link.getAttribute('data-scroll'));
 
-  buttons.forEach((button, index) => {
-    button.addEventListener('click', function () {
-      const textContainer = document.getElementById(button.id + '-text');
-      const newTextContent = textContents[index];
-
-      if (textContainer.style.display === 'block') {
-        textContainer.style.display = 'none';
-      } else {
-        // Hide all other text containers
-        document.querySelectorAll('.text-container').forEach(container => {
-          if (container !== textContainer) {
-            container.style.display = 'none';
-          }
-        });
-
-        textContainer.style.display = 'block';
-        textContainer.innerText = newTextContent;
-      }
+    // Scroll the page to the target position smoothly
+    window.scrollTo({
+      top: targetScroll,
+      behavior: 'smooth'
     });
   });
 });
+
+
 
 
 document.addEventListener('scroll', function () {
