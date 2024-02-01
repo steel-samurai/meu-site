@@ -21,6 +21,9 @@ body {
   background: #f8f4ec;
 }
 
+#pagina.fixed {
+  margin-top: 5vw;
+}
 
 header {
   font-family: monospace;
@@ -176,23 +179,51 @@ header.fixed {
 }
 
 #assina {
-  margin-top: 10%;
+  margin-top: 9%;
   width: 80%;
   height: 120px;
-  border: 2px solid red;
+  display: flex;
+  justify-content: right;
 }
 
-#assina img {
-  width: 100%;
-  height: 100%;
+#nome {
+  align-self: center;
+  width: 85%;
+  height: 100px;
   overflow: hidden;
+  margin-right: 10px;
+}
+
+.question-mark {
+  font-size: 24px;
+  transition: transform 0.6s ease;
+  align-self: flex-end;
+}
+
+#assina:hover > .question-mark {
+  transform: translateX(-40vw);
+}
+
+.question-mark > img {
+    width: 40px;
+    height: auto;
+}
+
+#linhaass{
+  margin-right: 15px;
+  position: absolute;
+  width: 73%;
+  height: 3px;
+  background-color: #000000;
+  z-index: 999;
+  align-self: flex-end;
+  margin-bottom: 4px;
 }
 
 #infos {
   margin-top: -20px;
-  border: 2px solid rgb(26, 28, 78);
-  width: 50%;
-  height: 20%;
+  width: 60%;
+  height: 35%;
   background-color: #072750;
   display: flex;
   flex-direction: column;
@@ -202,6 +233,29 @@ header.fixed {
 #infos p {
   font-size: 16px;
   margin: 0;
+}
+
+.hover-link {
+  position: relative;
+  color: white;
+  z-index: 0;
+  text-decoration: none;
+}
+
+.hover-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  bottom: 0;
+  right: 0;
+  background: #FF4500;
+  z-index: -1;
+  transition: left 0.3s ease;
+}
+
+.hover-link:hover::before {
+  left: 0;
 }
 
 .item3,
@@ -273,6 +327,7 @@ header.fixed {
 }
 
 .separator {
+  margin-bottom: 10px;
   width: 100%;
   height: 0;
   border-top: 20px solid #243c5c;
@@ -282,7 +337,6 @@ header.fixed {
 .separator::before {
   content: '';
   position: absolute;
-  top: 10px;
   left: 50%;
   transform: translate(-50%, -50%);
   border-left: 40px solid transparent;
@@ -290,8 +344,18 @@ header.fixed {
   border-top: 30px solid #243c5c;
 }
 
+.separator:last-child {
+  top: -20px;
+  border-top: 20px solid #f8f4ec;
+}
+
+.separator:last-child::before{
+  border-top: 30px solid #f8f4ec;
+}
+
 footer {
-  border: 2px solid red;
+  margin-top: -50px;
+  background-color: #072750;
   text-align: center;
   height: 10vw;
 }
@@ -372,9 +436,9 @@ h1 {
   align-self: center;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding: 20px;
-  border: 2px solid red;
-  height: 20%;
+  background-color: yellow;
+  padding: 15px;
+  height: 10%;
   width: 80%;
 }
 
