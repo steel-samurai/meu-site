@@ -10,59 +10,77 @@
 <body>
   <main>
     <header id="aheader">
-      <div class="dropdown">
-        <button class="dropbtn">
+      <div class="navbar">
+        <button class="menubtn">
           <div class="menu"></div>
           <div class="menu"></div>
-          <div class="menu"></div></button>
-        <div class="dropdown-content">
-          <a href="#" class="scrollLink" data-scroll="0">Início</a>
-          <a href="#" class="scrollLink" data-scroll="440">Sobre mim</a>
-          <a href="#" class="scrollLink" data-scroll="985">Motivações / Expectativas</a>
-          <a href="#" class="scrollLink" data-scroll="1200">Contato</a>
+          <div class="menu"></div>
+        </button>
+        <div class="navbar-texto">
+          <a href="#" class="scrollarSection" data-scroll="0">Início</a>
+          <a href="#" class="scrollarSection" data-scroll="440">Sobre mim</a>
+          <a href="#" class="scrollarSection" data-scroll="985">Motivações / Expectativas</a>
+          <a href="#" class="scrollarSection" data-scroll="1200">Contato</a>
         </div>
       </div>
     </header>
+
     <div id="pagina">
-      <div class="grid-container" id="azuli">
+
+      <div class="grid-container" id="azul">
         <div class="grid-item item1">
-          <div class="box">IMG</div>
-          <div class="box sombra"></div>
+          <div class="foto">IMG</div>
+          <div class="foto sombra"></div>
         </div>
+
         <div class="grid-item item2">
           <div id="assina">
             <img src="nome.png" id="nome">
-            <div id="linhaass"></div>
-            <div class="question-mark"><img src="pentip.png"></div>
+            <div id="linhaAss"></div>
+            <div class="pen-tip"><img src="pentip.png"></div>
           </div>
           <div id="infos">
             <p>Aluna do <b>2º ano de INF</b>;</p>
             <p>Entusiasta de front-end;</p>
-            <p>Participante assídua do <a href="https://www.reddit.com/r/webdev/top/?t=all" class="hover-link">r/webdev</a>;</p>
+            <p>Participante assídua do <a href="https://www.reddit.com/r/webdev/top/?t=all" class="reddit">r/webdev</a>;</p>
             <p>Futura programadora.</p>
           </div>
         </div>
       </div>
-      <div class="grid-container" id="parte2">
-        <div class="separator"></div>
+
+      <div class="grid-container">
+
+        <div class="seta-baixo"></div>
+
         <div class="grid-item item3">
-          <h1>Sobre mim</h1>
-          <div id="botoes"><button id="btn1" class="selected">Curiosida</button>
+          <h1>Sobre mim </h1>
+          <div class="botoes">
+            <button id="btn1" class="ativo">Curiosida</button>
             <button id="btn2">Coisinhas</button>
           </div>
-          <div id="texto">Novo texto do Botão 1</div>
-        </div>
-        <div class="grid-item item4">
-          <div id="botoes"><button class="selected">Curiosida</button>
+          <div id="textoSobreMim">
+              Lorem ipsum dolor sit amet, consectetur adipisc
+              elit, sed do eiusmod tempor incididunt ut labore
+              dolore magna aliqua. Ut enim ad minim veniam, qu
           </div>
-          <div id="curiosidades">Sobre esse projeto</div>
+        </div>
+
+        <div class="grid-item item4">
+          <div class="botoes">
+            <button class="ativo">Curiosida</button>
+          </div>
+          <div id="curiosidades">
+            Sobre esse projeto
+          </div>
           <div id="carousel">
             <img src="imagem1.png" id="image">
-            <button id="prevBtn"><</button>
-            <button id="nextBtn">></button>
+            <button id="anteBtn"><</button>
+            <button id="proxBtn">></button>
           </div>
         </div>
-        <div class="separator"></div>
+
+        <div class="seta-baixo"></div>
+
         <div id="parte3">
           <div class="grid-item item5">
             <h1>Motivações e Interesses</h1>
@@ -88,14 +106,16 @@
               um.
             </p>
           </div>
-          <div class="estrela">
+
+          <div id="estrela">
             <div id="caixa">
-              <div class="vertical-line"></div>
-              <div id="movingElement">
+              <div class="linha-estrela"></div>
+              <div id="icon-estrela">
                 <img src="star.png">
               </div>
             </div>
           </div>
+
           <div class="grid-item item6">
             <h1>Expectativas</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisc
@@ -123,7 +143,7 @@
             </p>
           </div>
         </div>
-        <div class="separator"></div>
+        <div class="seta-baixo"></div>
       </div>
       <footer>footer</footer>
     </div>
