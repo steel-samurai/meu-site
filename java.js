@@ -1,139 +1,128 @@
-window.onscroll = function () { myFunction() };
+// header -> fixed onscroll 
+// pqp isso aqui foi foda de entender
+document.addEventListener('scroll', function () {
+  let header = document.querySelector("header");
+  let pagina = document.querySelector("#pagina");
+  let tamanhoHeader = header.offsetTop;
 
-var header = document.getElementById("aheader");
-var pagina = document.getElementById("pagina");
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.scrollY > sticky) {
+  if (scrollY > tamanhoHeader) {
     header.classList.add("fixed");
     pagina.classList.add("fixed");
-  } else {
+  } 
+  else {
     header.classList.remove("fixed");
     pagina.classList.remove("fixed");
   }
-}
- 
-// Add this script at the end of the body or in the head
-document.querySelectorAll('.scrollLink').forEach(function(link) {
-  link.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevents the default behavior of the link
+});
 
-    // Get the target scroll position from the 'data-scroll' attribute
-    var targetScroll = parseInt(link.getAttribute('data-scroll'));
 
-    // Scroll the page to the target position smoothly
-    window.scrollTo({
-      top: targetScroll,
+// 'menu hamburguer' da navbar
+//os href tavam dando errado :(
+document.querySelectorAll('.scrollarSection').forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    let numScroll = parseInt(link.dataset.scroll);
+    scrollTo({
+      top: numScroll,
       behavior: 'smooth'
     });
   });
+
 });
 
 
+//botoes amarelos
+let botao1 = document.querySelector('#btn1');
+let botao2 = document.querySelector('#btn2');
+let textosBotoes = [
+  "1Lorem ipsum dolor sit amet, consectetur adipisc elit, " + 
+  "sed do eiusmod tempor incididunt ut labore dolore magna " + 
+  "aliqua. Ut enim ad minim veniam, qu", 
 
-
-document.addEventListener('scroll', function () {
-  // Get the distance scrolled from the top of the page
-  var scrollDistance = window.scrollY;
-  scrollDistance-= 800;
-
-  
-  // Set the minimum value for top to ensure the element doesn't go above the container
-  var minTop = 40;
-  
-  // Limit the movement within the container height
-  var containerHeight = document.getElementById('caixa').offsetHeight;
-  var maxTop = containerHeight - document.getElementById('movingElement').offsetHeight;
-
-  // Move the element down based on the scroll distance, but limit within the container
-  var movingElement = document.getElementById('movingElement');
-  var num = Math.min(Math.max(scrollDistance, minTop), maxTop);
-  movingElement.style.top = num + 'px';
-});
-
-
-document.getElementById('btn1').addEventListener('click', function() {
-  changeText(1);
-});
-
-document.getElementById('btn2').addEventListener('click', function() {
-  changeText(2);
-});
-
-function changeText(btnNumber) {
-  var textoDiv = document.getElementById('texto');
-  var btn1 = document.getElementById('btn1');
-  var btn2 = document.getElementById('btn2');
-
-  if (btnNumber === 1) {
-    textoDiv.innerHTML = 'Novo texto do Botão 1';
-    btn1.classList.add('selected');
-    btn2.classList.remove('selected');
-  } else if (btnNumber === 2) {
-    textoDiv.innerHTML = 'Novo texto do Botão 2';
-    btn1.classList.remove('selected');
-    btn2.classList.add('selected');
-  }
-}
-
-
-
-
-let currentIndex = 0;
-const images = [
-    "imagem1.png",
-    "imagem2.png",
-    "imagem3.png",
+  "2Lorem ipsum dolor sit amet, consectetur adipisc elit, " + 
+  "sed do eiusmod tempor incididunt ut labore dolore magna " + 
+  "aliqua. Ut enim ad minim veniam, qu"
 ];
 
-const imageElement = document.getElementById('image');
-const prevButton = document.getElementById('prevBtn');
-const nextButton = document.getElementById('nextBtn');
-const imageCaption = document.createElement('div');
+botao1.addEventListener('click', function () {
+  mudarTexto(0);
+});
 
-imageCaption.id = 'imageCaption';
-document.getElementById('carousel').appendChild(imageCaption);
+botao2.addEventListener('click', function () {
+  mudarTexto(1);
+});
 
-// Adiciona eventos de clique aos botões
-prevButton.onclick = function() {
-    changeImage(-1);
-};
+function mudarTexto(numBtn) {
+  let textoDiv = document.querySelector('#textoSobreMim');
 
-nextButton.onclick = function() {
-    changeImage(1);
-};
-
-imageElement.onmouseover = function() {
-    showCaption();
-};
-
-imageElement.onmouseout = function() {
-    hideCaption();
-};
-
-function showCaption() {
-    imageCaption.style.opacity = 0.9;
-    imageCaption.innerHTML = `Legenda da Imagem ${currentIndex + 1}`;
+  textoDiv.innerHTML = textosBotoes[numBtn];
+  botao1.classList.toggle('ativo');
+  botao2.classList.toggle('ativo');
 }
 
-function hideCaption() {
-    imageCaption.style.opacity = 0;
+
+//galeria de imagens
+let indexAtual = 0;
+let images = [
+  "imagem1.png",
+  "imagem2.png",
+  "imagem3.png",
+];
+
+let imagemEl = document.querySelector('#image');
+let anteBtn = document.querySelector('#anteBtn');
+let proxBtn = document.querySelector('#proxBtn');
+let imagemLegenda = document.createElement('div');
+imagemLegenda.id = 'imagemLegenda';
+document.querySelector('#carousel').appendChild(imagemLegenda);
+let legendas = [
+  'Legenda 1',
+  'Legenda 22',
+  'Legenda 333'
+]
+anteBtn.addEventListener('click', function() {
+  proxImagem(-1);
+});
+
+proxBtn.addEventListener('click', function() {
+  proxImagem(1);
+});
+
+imagemEl.addEventListener('mouseover', function() {
+  mostrarLegenda();
+});
+
+imagemEl.addEventListener('mouseout', function() {
+  esconderLegenda();
+});
+
+function mostrarLegenda() {
+  imagemLegenda.style.opacity = 0.9;
+  imagemLegenda.innerHTML = legendas[indexAtual];
 }
 
-function changeImage(indexIncrement) {
-    currentIndex += indexIncrement;
-
-    // Verifica se atingiu o final ou o início do array
-    if (currentIndex < 0) {
-        currentIndex = images.length - 1;
-    } else if (currentIndex >= images.length) {
-        currentIndex = 0;
-    }
-
-    // Atualiza a imagem exibida
-    imageElement.src = images[currentIndex];
-
-    // Atualiza a legenda
-    showCaption();
+function esconderLegenda() {
+  imagemLegenda.style.opacity = 0;
 }
+
+function proxImagem(proxIndex) {
+  indexAtual += proxIndex;
+
+  indexAtual = (indexAtual+images.length)%images.length;
+  imagemEl.src = images[indexAtual];
+
+  mostrarLegenda();
+}
+
+//icon da estrela
+document.addEventListener('scroll', function () {
+  let valorY = scrollY - 800;
+  let container = document.querySelector('#caixa');
+  let icon = document.querySelector('#icon-estrela');
+
+  let minTop = 40;
+  let maxTop = container.offsetHeight - icon.offsetHeight;
+  
+  let newTop = Math.min(valorY, maxTop);
+  icon.style.top = Math.max(minTop, newTop) + 'px';
+});
