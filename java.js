@@ -31,7 +31,7 @@ document.querySelectorAll('.scrollarSection').forEach(function (link) {
 });
 
 
-//botoes amarelos
+//botoes
 let botao1 = document.querySelector('#btn1');
 let botao2 = document.querySelector('#btn2');
 let textosBotoes = [
@@ -76,9 +76,9 @@ let imagemLegenda = document.createElement('div');
 imagemLegenda.id = 'imagemLegenda';
 document.querySelector('#carousel').appendChild(imagemLegenda);
 let legendas = [
-  'Legenda 1',
-  'Legenda 22',
-  'Legenda 333'
+  'Inputs por data',
+  'Total de contribuições',
+  'Total de linhas ganhas e perdidas'
 ]
 anteBtn.addEventListener('click', function() {
   proxImagem(-1);
