@@ -64,9 +64,9 @@ function mudarTexto(numBtn) {
 //galeria de imagens
 let indexAtual = 0;
 let images = [
-  "imagem1.png",
-  "imagem2.png",
-  "imagem3.png",
+  "imgs/imagem1.png",
+  "imgs/imagem2.png",
+  "imgs/imagem3.png",
 ];
 
 let imagemEl = document.querySelector('#image');

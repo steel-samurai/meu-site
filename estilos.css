@@ -73,7 +73,7 @@ header.fixed {
   height: 12px;
   margin-right: 5px;
 
-  background-image: url('starmini.png');
+  background-image: url('imgs/starmini.png');
   background-size: cover;
 }
 
@@ -139,7 +139,7 @@ header.fixed {
 
 #azul {
   background-color: #243c5c; /* cor 8*/
-  background-image: url(doodle.png);
+  background-image: url(imgs/doodle.png);
   height: 450px;
 }
 
