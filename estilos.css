@@ -138,9 +138,8 @@ header.fixed {
 }
 
 #azul {
-  background-color: #243c5c; /* cor 8*/
   background-image: url(imgs/doodle.png);
-  height: 450px;
+  height: 490px;
 }
 
 .grid-container {
@@ -320,7 +319,7 @@ header.fixed {
 .item3,
 .item4 {
   width: calc(50% - 2vw);
-  height: 480px;
+  height: 570px;
 }
 
 .item3 {
@@ -381,6 +380,7 @@ button{
 
 #textoSobreMim {
   margin-left: 12px;
+  text-align: left;
 }
 
 #textoSobreMim,
@@ -416,14 +416,15 @@ button{
 }
 
 #carousel {
-  height: 50%;
+  height: 60%;
   width: 90%;
   align-self: center;
   position: relative;
   border: 1px solid #474747;
-  /* cor */
   border-radius: 10px;
+  overflow: hidden;
 }
+
 
 #image {
   width: 100%;
@@ -433,13 +434,14 @@ button{
 #anteBtn,
 #proxBtn {
   position: absolute;
-  bottom: 85px;
+  top: 45%;
   font-size: 30px;
   font-weight: 900;
   font-family: sans-serif;
   cursor: pointer;
   background: none;
   border: none;
+  color: white;
 }
 
 #anteBtn {
@@ -468,6 +470,7 @@ button{
   top: -3vw;
   width: calc(50% - 2vw);
   height: 100%;
+  
 }
 
 .item5>h1,
@@ -478,6 +481,7 @@ button{
 .item5>p,
 .item6>p {
   margin: 20px 30px;
+  text-align:left;
 }
 
 #parte3 {
@@ -491,7 +495,7 @@ button{
   margin-bottom: 2vw;
   width: 20px;
   height: 34vw;
-  z-index: 999;
+  z-index: 1;
 }
 
 #caixa {
@@ -508,7 +512,6 @@ button{
   left: 9px;
   background-color: rgb(116, 115, 115);
   /* cor */
-  z-index: 996;
 }
 
 #icon-estrela {

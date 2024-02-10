@@ -35,9 +35,10 @@ document.querySelectorAll('.scrollarSection').forEach(function (link) {
 let botao1 = document.querySelector('#btn1');
 let botao2 = document.querySelector('#btn2');
 let textosBotoes = [
-  "1Lorem ipsum dolor sit amet, consectetur adipisc elit, " + 
-  "sed do eiusmod tempor incididunt ut labore dolore magna " + 
-  "aliqua. Ut enim ad minim veniam, qu", 
+  "- Funciono muito bem com a metodologia Scrum (pequenas entregas em um curto período de tempo)." +
+  "<br><br>- Já tenho conhecimentos básicos de Python e programação orientada a objetos"+
+  "<br><br>- Trabalho bem em equipe" +
+  "<br><br>- Sou uma pessoa organizada e dedicada", 
 
   "2Lorem ipsum dolor sit amet, consectetur adipisc elit, " + 
   "sed do eiusmod tempor incididunt ut labore dolore magna " + 
@@ -76,9 +77,9 @@ let imagemLegenda = document.createElement('div');
 imagemLegenda.id = 'imagemLegenda';
 document.querySelector('#carousel').appendChild(imagemLegenda);
 let legendas = [
-  'Inputs por data',
-  'Total de contribuições',
-  'Total de linhas ganhas e perdidas'
+  'Total de adições por data',
+  'Adições e exclusões (15/01 a 03/02)',
+  'Repositório no github'
 ]
 anteBtn.addEventListener('click', function() {
   proxImagem(-1);
