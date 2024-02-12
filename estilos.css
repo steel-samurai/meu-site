@@ -378,11 +378,6 @@ button{
   color: white;
 }
 
-#textoSobreMim {
-  margin-left: 12px;
-  text-align: left;
-}
-
 #textoSobreMim,
 #curiosidades {
   align-self: center;
@@ -394,7 +389,12 @@ button{
   border-radius: 2px;
   background-color: #f8f8f8;
   /* cor */
-  height: 200px;
+  height: fit-content;
+}
+
+#textoSobreMim {
+  margin-left: 12px;
+  text-align: left;
   width: 80%;
 }
 
@@ -411,7 +411,6 @@ button{
   margin-bottom: 30px;
   padding: 15px;
   padding-top: 13px;
-  height: 8%;
   width: 83%;
 }
 

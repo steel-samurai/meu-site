@@ -35,14 +35,12 @@ document.querySelectorAll('.scrollarSection').forEach(function (link) {
 let botao1 = document.querySelector('#btn1');
 let botao2 = document.querySelector('#btn2');
 let textosBotoes = [
+    "Sou excepcional em sprints. Sou uma pessoa organizada e dedicada, sempre estou comprometida em alcançar os objetivos estabelecidos. Tenho uma grande apreciação pela propriedade intelectual e estou familiarizada com as bases de Python e programação orientada a objetos em Python. Trabalho de forma eficaz em equipe, colaborando e contribuindo para o sucesso coletivo. Minhas boas notas na disciplina de Web são um reflexo do meu compromisso com a área.",
+   
   "- Funciono muito bem com a metodologia Scrum (pequenas entregas em um curto período de tempo)." +
   "<br><br>- Já tenho conhecimentos básicos de Python e programação orientada a objetos"+
   "<br><br>- Trabalho bem em equipe" +
-  "<br><br>- Sou uma pessoa organizada e dedicada", 
-
-  "2Lorem ipsum dolor sit amet, consectetur adipisc elit, " + 
-  "sed do eiusmod tempor incididunt ut labore dolore magna " + 
-  "aliqua. Ut enim ad minim veniam, qu"
+  "<br><br>- Sou uma pessoa organizada e dedicada"
 ];
 
 botao1.addEventListener('click', function () {
@@ -57,8 +55,14 @@ function mudarTexto(numBtn) {
   let textoDiv = document.querySelector('#textoSobreMim');
 
   textoDiv.innerHTML = textosBotoes[numBtn];
-  botao1.classList.toggle('ativo');
-  botao2.classList.toggle('ativo');
+  if(numBtn == 0){
+    botao1.classList.add('ativo');
+    botao2.classList.remove('ativo');
+  }
+  else {
+  botao1.classList.remove('ativo');
+  botao2.classList.add('ativo');
+  }
 }
 
 
