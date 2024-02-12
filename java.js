@@ -35,12 +35,13 @@ document.querySelectorAll('.scrollarSection').forEach(function (link) {
 let botao1 = document.querySelector('#btn1');
 let botao2 = document.querySelector('#btn2');
 let textosBotoes = [
-    "Sou excepcional em sprints. Sou uma pessoa organizada e dedicada, sempre estou comprometida em alcançar os objetivos estabelecidos. Tenho uma grande apreciação pela propriedade intelectual e estou familiarizada com as bases de Python e programação orientada a objetos em Python. Trabalho de forma eficaz em equipe, colaborando e contribuindo para o sucesso coletivo. Minhas boas notas na disciplina de Web são um reflexo do meu compromisso com a área.",
-   
-  "- Funciono muito bem com a metodologia Scrum (pequenas entregas em um curto período de tempo)." +
-  "<br><br>- Já tenho conhecimentos básicos de Python e programação orientada a objetos"+
-  "<br><br>- Trabalho bem em equipe" +
-  "<br><br>- Sou uma pessoa organizada e dedicada"
+"<p>Sou uma pessoa <b>organizada</b> e <b>dedicada</b>, sempre estou comprometida em alcançar os objetivos estabelecidos. Tenho grande interesse pela questão da propriedade intelectual e estou familiarizada com as bases de <b>Python e programação orientada a objetos. </b></p><p> Trabalho de forma eficaz em equipe, fazendo parte e contribuindo para os objetivos coletivos. Em 2023, tirei ótimas notas na disciplina de Web, um reflexo do meu compromisso com a área. Funciono muito bem com a dinâmica de sprints, como pode ser demonstrado no <b>modo como este site foi criado</b>. </p>",   
+  "<p>- Sou organizada e dedicada" +
+  "<br><br>- Conheço <b>Python e OOP</b>"+
+  "<br><br>- Trabalho bem em equipe e sigo todas as instruções dadas pelo professor" +
+  "<br><br>- Obtive boas notas em Web" +
+  "<br><br>- Funciono bem com a dinâmica de sprints" +
+  "<br><br>- Tenho compromisso com o projeto</p>"
 ];
 
 botao1.addEventListener('click', function () {
@@ -82,7 +83,7 @@ imagemLegenda.id = 'imagemLegenda';
 document.querySelector('#carousel').appendChild(imagemLegenda);
 let legendas = [
   'Total de adições por data',
-  'Adições e exclusões (15/01 a 03/02)',
+  'Adições e exclusões (de 15/01 a 03/02)',
   'Repositório no github'
 ]
 anteBtn.addEventListener('click', function() {
